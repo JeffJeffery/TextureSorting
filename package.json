@@ -2,7 +2,7 @@
   "name": "texture-grouping",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://JeffJeffery.github.io",
+  "homepage": "https://JeffJeffery.github.io/TextureSorting",
   "dependencies": {
     "-": "^0.0.1",
     "@testing-library/jest-dom": "^5.16.4",
