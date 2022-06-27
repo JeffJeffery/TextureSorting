@@ -1,15 +1,15 @@
 {
-  "main.css": "/static/css/main.54efc846.chunk.css",
-  "main.js": "/static/js/main.f71f8a82.chunk.js",
-  "main.js.map": "/static/js/main.f71f8a82.chunk.js.map",
-  "static/js/1.6d901b3e.chunk.js": "/static/js/1.6d901b3e.chunk.js",
-  "static/js/1.6d901b3e.chunk.js.map": "/static/js/1.6d901b3e.chunk.js.map",
-  "static/js/2.47672b07.chunk.js": "/static/js/2.47672b07.chunk.js",
-  "static/js/2.47672b07.chunk.js.map": "/static/js/2.47672b07.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.2600f86d.js",
-  "runtime~main.js.map": "/static/js/runtime~main.2600f86d.js.map",
-  "static/css/main.54efc846.chunk.css.map": "/static/css/main.54efc846.chunk.css.map",
-  "index.html": "/index.html",
-  "precache-manifest.e9e9bd24422cb07d89a589a5a7f7937a.js": "/precache-manifest.e9e9bd24422cb07d89a589a5a7f7937a.js",
-  "service-worker.js": "/service-worker.js"
+  "main.css": "/TextureSorting/static/css/main.54efc846.chunk.css",
+  "main.js": "/TextureSorting/static/js/main.5aac5c74.chunk.js",
+  "main.js.map": "/TextureSorting/static/js/main.5aac5c74.chunk.js.map",
+  "static/js/1.6d901b3e.chunk.js": "/TextureSorting/static/js/1.6d901b3e.chunk.js",
+  "static/js/1.6d901b3e.chunk.js.map": "/TextureSorting/static/js/1.6d901b3e.chunk.js.map",
+  "static/js/2.47672b07.chunk.js": "/TextureSorting/static/js/2.47672b07.chunk.js",
+  "static/js/2.47672b07.chunk.js.map": "/TextureSorting/static/js/2.47672b07.chunk.js.map",
+  "runtime~main.js": "/TextureSorting/static/js/runtime~main.be382fd5.js",
+  "runtime~main.js.map": "/TextureSorting/static/js/runtime~main.be382fd5.js.map",
+  "static/css/main.54efc846.chunk.css.map": "/TextureSorting/static/css/main.54efc846.chunk.css.map",
+  "index.html": "/TextureSorting/index.html",
+  "precache-manifest.f40279bca85a0dafa81863444b631de4.js": "/TextureSorting/precache-manifest.f40279bca85a0dafa81863444b631de4.js",
+  "service-worker.js": "/TextureSorting/service-worker.js"
 }
