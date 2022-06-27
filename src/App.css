@@ -1,38 +1,193 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Page{
+  background-image: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 10px;
+}
+
+.Heading{
+  padding: 0;
+  padding-top: 5vh;
+  text-align: center;
+  color: blue;
+  text-decoration-line: underline;
+}
+
+.userName{
+  text-align: center;
+  margin: 0;
+  font-size: .8rem;
+  max-height: 5vh;
+  position: absolute;
+  top: 5vh;
+  right: 5vw;
+}
+
+.Instructions{
+  align-self: center;
+  overflow: hidden;
+  text-align: center;
+  width: 80vw;
+
+}
+
+.Buttons{
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 20px;
+}
+
+form{
+  max-height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form input, form button{
+  padding: 0.5rem;
+  font-size: .8rem;
+  border: #d88771;
+  border-width: 10px;
+  background: #C0C0C0;
+  border-radius: 15px;
+  max-height: 5vh;
+  position: absolute;
+  top: 5vh;
+  right: 5vw;
+}
+
+form button{
   color: white;
+  background: #C0C0C0;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+/* this just swapps the colors around when you hover */
+form button:hover{
+  background: white;
+  color: #C0C0C0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.errorMessage{
+  background: red;
+  width: 30vw;
+  font-size: 2rem;
+  position: fixed;
+  bottom: 0;
+  left: 50vw;
+  margin-left: -15vw;
+  margin-bottom: 5vw;
+  border-radius: 25px;
+  text-align: center;
+  
 }
+
+
+.ShuffleButton{
+  background-color: red; /* Red */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 20px;
+}
+
+.SubmitButton{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 20px;
+}
+
+.ShuffleButton:hover{
+  background-color: rgb(193, 12, 12); /* Red */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.SubmitButton:hover{
+  background-color: #357c37; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.Textures{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-self: center;
+
+  gap: 10px;
+}
+
+.Sorted_Textures{
+  margin: 0;
+  padding: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.Unsorted_Textures {
+  margin: 0;
+  padding: 0;
+}
+
+.Unsorted_Group{
+  max-width: 100vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 1
+}
+
+.Sorted_Group{
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  background-color: white;
+  /*border: 2px solid #4CAF50;*/
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 20px;
+  border-width: 10px;
+  border-style: dashed;
+  border-color: #4CAF50;
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
+.textureImage{
+  max-width: 128px;
+}
+
+
