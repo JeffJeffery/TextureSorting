@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/TextureSorting/precache-manifest.f40279bca85a0dafa81863444b631de4.js"
+  "/TextureSorting/precache-manifest.77d1b68d675d7384e7ec6cad16272819.js"
 );
 
 workbox.clientsClaim();
