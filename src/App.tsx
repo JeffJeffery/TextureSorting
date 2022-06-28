@@ -42,6 +42,14 @@ function App() {
   });
   const [errorMessage, setErrorMessage] = useState("");
   const [submittedBool, setSubmittedBool] = useState(false);
+  const [showUserHistoryBool, setShowUserHistoryBool] = useState(false);
+  const [history, setHistory] = useState<
+    {
+      userName: string;
+      submitionNumber: number;
+      textureGroup: string;
+    }[]
+  >([]);
 
   const userNameRef = React.useRef() as React.MutableRefObject<
     HTMLInputElement
@@ -87,7 +95,7 @@ function App() {
       setTimeout(() => setErrorMessage(""), 1500);
     } else {
       imageGroup.map((image) => console.log(image));
-      console.log("POST DISCONNECTED");
+      //console.log("POST DISCONNECTED");
       //make an axios call to do actually save the data
       axios
         .post(
@@ -99,7 +107,7 @@ function App() {
           }
         )
         .then((response) => {
-          console.log("one", response);
+          console.log(response);
         });
       setSubmittedBool(true);
       localStorage.setItem(LOCAL_STORAGE_KEY_1, JSON.stringify([]));
@@ -162,9 +170,97 @@ function App() {
           </button>
         </form>
       );
+    } else if (showUserHistoryBool) {
+      return (
+        <div className="user">
+          <h3 className="userName">Logged in as {data.userName}</h3>
+          <button
+            className="userButton"
+            onClick={() => setShowUserHistoryBool(false)}
+          >
+            Make Submission
+          </button>
+        </div>
+      );
     } else {
-      return <h3 className="userName">Logged in as {data.userName}</h3>;
+      return (
+        <div className="user">
+          <h3 className="userName">Logged in as {data.userName}</h3>
+          <button className="userButton" onClick={handleUserHistory}>
+            Submition History
+          </button>
+        </div>
+      );
     }
+  };
+
+  const handleUserHistory = () => {
+    axios
+      .get(
+        "https://qbj058sa0m.execute-api.us-east-2.amazonaws.com/prod/textureGroups/" +
+          data.userName
+      )
+      .then((response) => {
+        setShowUserHistoryBool(true);
+        setHistory(response.data);
+      });
+  };
+
+  const handleDelete = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    index: number
+  ) => {
+    const name = history[index].userName;
+    const numb = history[index].submitionNumber;
+    const newHistory = [...history];
+    newHistory.splice(index, 1);
+    setHistory(newHistory);
+    axios
+      .delete(
+        "https://qbj058sa0m.execute-api.us-east-2.amazonaws.com/prod/textureGroups/none",
+        {
+          data: {
+            userName: name,
+            submitionNumber: numb,
+          },
+        }
+      )
+      .then((response) => {
+        console.log(response);
+        handleUserHistory();
+      });
+  };
+
+  const displayHistory = () => {
+    return history.map((groups, index) => {
+      return (
+        <div className="History" key={index}>
+          <div className="Sorted_Group_History">
+            {JSON.parse(groups.textureGroup).map(
+              (image: string, iIndex: number) => {
+                return (
+                  <ul className="Sorted_Textures" key={9 * index + iIndex}>
+                    <img
+                      src={
+                        process.env.PUBLIC_URL + `/resources/real/${image}.png`
+                      }
+                      className="textureImage"
+                    />
+                  </ul>
+                );
+              }
+            )}
+          </div>
+          <button
+            className="Delete_Button"
+            key={index}
+            onClick={(e) => handleDelete(e, index)}
+          >
+            Delete
+          </button>
+        </div>
+      );
+    });
   };
 
   const displaySubmition = () => {
@@ -180,15 +276,26 @@ function App() {
     });
   };
 
-  if (submittedBool) {
+  if (showUserHistoryBool) {
+    const renderedImages = displayHistory();
+    return (
+      <div className="Page">
+        <h1 className="Heading">ViSiProg Texture Sorting</h1>
+        {inputUserName()}
+        <h2 className="Instructions">Here are your previous submissions:</h2>
+        {renderedImages}
+      </div>
+    );
+  } else if (submittedBool) {
     const renderedImages = displaySubmition();
     return (
       <div className="Page">
         <h1 className="Heading">ViSiProg Texture Sorting</h1>
+        {inputUserName()}
         <h2 className="Instructions">
           Thank you for Submitting! To submit another, please Refresh the page!
         </h2>
-        <h2 className="Instructions">Your Submition:</h2>
+        <h2 className="Instructions">Your submission:</h2>
         <div className={renderedImages.length > 0 ? "Sorted_Group" : ""}>
           {renderedImages}
         </div>

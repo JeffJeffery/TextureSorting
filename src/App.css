@@ -13,14 +13,34 @@
   text-decoration-line: underline;
 }
 
+.user{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 5vh;
+  right: 5px;
+}
+
 .userName{
   text-align: center;
   margin: 0;
   font-size: .8rem;
   max-height: 5vh;
-  position: absolute;
-  top: 5vh;
-  right: 5vw;
+}
+
+.userButton{
+  color: white;
+  background: #C0C0C0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 15px;
+}
+.userButton:hover{
+  background: white;
+  color: #C0C0C0;
 }
 
 .Instructions{
@@ -30,6 +50,31 @@
   width: 80vw;
 
 }
+
+.History{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.Delete_Button{
+  background-color: red; /* Red */
+  border: none;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 20px;
+  cursor: pointer;}
+
+  .Delete_Button:hover{
+    background-color: rgb(193, 12, 12);
+
+  }
+
 
 .Buttons{
   display: flex;
@@ -183,7 +228,20 @@ form button:hover{
   border-style: dashed;
   border-color: #4CAF50;
   margin-left: 5vw;
-  margin-right: 5vw;
+  margin-right: 5vw
+}
+.Sorted_Group_History{
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 20px;
+  border-width: 10px;
+  border-style: dashed;
+  border-color: #4CAF50;
+  margin-left: 5vw;
+  margin-right: 5vw
 }
 
 .textureImage{
